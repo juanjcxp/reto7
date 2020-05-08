@@ -1,0 +1,25 @@
+/*-------------------*\
+-- MAIN
+\*-------------------*/
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/utilities";
+
+@import "./components/button";
+@import "./components/banner";
+@import "./components/container";
+@import "./components/search";
+@import "./components/sub-title-box";
+@import "./components/separator";
+@import "./components/icons";
+
+@import "./layout/header";
+@import "./layout/popular";
+@import "./layout/all-article";
+@import "./layout/footer";
+
+@import "./pages/home";

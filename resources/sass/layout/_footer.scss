@@ -1,0 +1,108 @@
+/*-------------------*\
+-- FOOTER
+\*-------------------*/
+.footer {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  background-color: $color-primary-light-3;
+  max-width: $container-main-width;
+  border-radius: 0 20rem 0 0;
+  height: 94.1rem;
+
+  @include respond(phone) {
+    height: 140rem;
+  }
+  
+  &__container {
+    max-width: $container-sub-width;
+    margin: 9rem;
+
+    @include respond(phone) {
+      margin: 4rem auto;
+    }
+
+    .join-us__box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include respond(phone) { // width < 600?
+        display: block;
+      }
+
+      .join-us__info {
+        
+        @include respond(phone) { // width < 600?
+          margin-bottom: 4rem;
+        }
+
+        .info__title {
+          width: 31rem;
+          margin-bottom: 3.2rem;
+
+          @include respond(phone) {
+            width: 25rem;
+            margin-top: 2rem;
+          }
+        }
+
+        .info__paragraph {
+          width: 46rem;
+
+          @include respond(phone) {
+            width: 35rem;
+          }
+        }
+      }
+    }
+
+    .additional-information {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "contact-us about-us follow-us";
+      grid-column-gap: 15rem;
+      color: rgba($color-white, .8);
+
+      @include respond(tab-port) {
+        grid-column-gap: 10rem;
+      }
+
+      @include respond(phone) { // width < 600?
+        grid-template-columns: 1fr;
+        grid-template-areas: "contact-us"
+                             "about-us"
+                             "follow-us";
+        grid-row-gap: 5rem;
+      }
+
+      .contact-us {
+        display: flex;
+        flex-direction: column;
+
+        &__img {
+          width: 18rem;
+          margin-bottom: 2.5rem;
+        }
+
+        &__info {
+          display: flex;
+          margin-bottom: 2rem;
+
+          .info__word {
+            margin-right: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.infos {
+  margin-top: 3rem;
+
+  .info__p {
+    margin-bottom: 2rem;
+  }
+}

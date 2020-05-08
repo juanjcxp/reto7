@@ -1,0 +1,196 @@
+/*-------------------*\
+-- TYPOGRAPHY
+\*-------------------*/
+body {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.6rem;
+  color: $color-grey-dark;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+
+  &__item {
+    font-size: 2rem;
+    line-height: 2.8rem;
+
+    @include respond(phone) { // width < 600?
+      font-size: 1.6rem;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2.5rem;
+
+      @include respond(phone) { // width < 600?
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  .active {
+    @include active;
+  }
+
+  &__link {
+    color: $color-black;
+    text-decoration: none;
+
+    &:hover {
+      @include active;
+    }
+  }
+}
+
+.heading-primary {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  @include respond(phone) { // width < 600?
+    width: 90%;
+  }
+
+  &--main {
+    display: block;
+
+    font-size: 4.4rem;
+    line-height: 7.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $color-white;
+
+    @include respond(phone) { // width < 600?
+      font-size: 3.5rem;
+    }
+  }
+
+  &--sub {
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba($color-white, 0.8);
+
+    @include respond(phone) { // width < 600?
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.sub-title {
+  display: block;
+  color: $color-primary-light-1;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+  text-transform: uppercase;
+  margin-bottom: 3.4rem;
+}
+
+// ARTICLE | TOP
+.top {
+  &__title {
+    font-weight: bold;
+    font-size: 3.6rem;
+    letter-spacing: 0.04em;
+    line-height: 4.6rem;
+    color: $color-primary;
+  }
+
+  &__paragraph {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    letter-spacing: 0.04em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $color-grey-light-1;
+  }
+}
+
+// ARTICLE | BOTTOM
+.autor {
+  &__title {
+    color: $color-primary;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.04em;
+    font-weight: bold;
+  }
+
+  &__date {
+    color: $color-primary;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.04em;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.4;
+  }
+}
+
+.title-sm {
+  margin-top: 1.2rem;
+  font-size: 2.2rem;
+  line-height: 3.2rem;
+}
+
+.title-post {
+  margin-bottom: .5rem;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+.paragraph-sm {
+  font-size: 1.4rem;
+}
+
+// FOOTER | INFO
+.info__title {
+  font-weight: normal;
+  font-size: 3.6rem;
+  line-height: 4.6rem;
+  letter-spacing: 0.05em;
+  color: $color-white;
+
+  @include respond(phone) {
+    font-size: 2.6rem;
+    line-height: normal;
+    color: $color-white;
+  }
+}
+
+.info__paragraph {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.05em;
+  color: $color-white;
+  opacity: 0.6;
+}
+
+// FOOTER | additional-information
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  line-height: 3rem;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+
+  .info__p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    letter-spacing: 0.05em;
+  }
+
+.bottom__title {
+  margin-top: 6rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.05em;
+  color: $color-white;
+  opacity: 0.4;
+}

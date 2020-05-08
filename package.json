@@ -1,0 +1,14 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "CSS Grid, FlexBox & Sass",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass ./resources/sass/main.scss ./resources/css/main.css -w"
+  },
+  "author": "jjc",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}

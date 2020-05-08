@@ -1,0 +1,15 @@
+/*-------------------*\
+-- CONTAINER
+\*-------------------*/
+.container {
+  max-width: $container-sub-width;
+  margin: 0 auto;
+
+  @include respond(tab-port) {
+    margin: 0 4rem;
+  }
+
+  @include respond(phone) {
+    margin: 0 2rem;
+  }
+}

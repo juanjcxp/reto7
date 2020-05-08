@@ -1,0 +1,138 @@
+/*-------------------*\
+-- POPULAR
+\*-------------------*/
+.popular {
+  margin-bottom: 9rem;
+
+  @include respond(phone) {
+    margin-bottom: 5rem;
+  }
+  
+  &-grid-main {
+    margin-bottom: 2rem;
+
+    .article-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "info img";
+      grid-column-gap: 2rem;
+
+      @include respond(phone) { // width < 600?
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas: "img"
+                             "info";
+        grid-row-gap: 2rem;
+      }
+
+      &__info {
+        grid-area: info;
+        height: 100%;
+        width: 100%;
+      }
+
+      &__img {
+        grid-area: img;
+        width: 100%;
+
+        @include respond(tab-port) {
+          height: 100%;
+          object-fit: cover;
+        }
+
+        @include respond(phone) {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .popular-grid-sub {
+    display: grid;
+    grid-template-columns: repeat(3, 30rem);
+    grid-template-areas: "article_1 article_2 article_3";
+    grid-column-gap: 2rem;
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "article_1 article_2 article_3";
+      grid-row-gap: 3rem;
+    }
+
+    @include respond(phone) { // width < 600?
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "article_1"
+                           "article_2"
+                           "article_3";
+      grid-row-gap: 3rem;
+    }
+
+    [class^="article-sub"] {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-areas: "img"
+                           "info";
+    }
+
+    .article-sub-1 {
+      grid-area: article_1;
+
+      .article__info {
+        grid-area: info;
+      }
+
+      .article__img {
+        width: 100%;
+        grid-area: img;
+      }
+    }
+
+    .article-sub-2 {
+      grid-area: article_2;
+
+      .article__info {
+        grid-area: info;
+      }
+
+      .article__img {
+        width: 100%;
+        grid-area: img;
+      }
+    }
+
+    .article-sub-3 {
+      grid-area: article_3;
+
+      .article__info {
+        grid-area: info;
+      }
+
+      .article__img {
+        width: 100%;
+        grid-area: img;
+      }
+    }
+  }
+
+  .article__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .top {
+      &__title {
+        margin-bottom: 1.4rem;
+      }
+
+      &__paragraph {
+        margin-bottom: 3rem;
+      }
+    }
+
+    .bottom {
+      @include bottom-style;
+    }
+  }
+}
+

@@ -1,0 +1,76 @@
+/*-------------------*\
+-- MIXINS
+\*-------------------*/
+@mixin reset-a {
+  text-decoration: none;
+  border: none;
+  background-color: none;
+  display: block;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin active {
+  color: $color-primary;
+  font-weight: bold;
+}
+
+@mixin placeholder-style {
+  color: $color-primary;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0.6;
+}
+
+@mixin bottom-style {
+  & {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icons__icon {
+      &:not(:last-child) {
+        margin-right: 3.8rem;
+      }
+    }
+  }
+}
+
+@mixin arrow-style {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  color: $color-primary-light-1;
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+      @media only screen and (max-width: 37.5em) { @content };    //600px
+  }
+  @if $breakpoint == tab-port {
+      @media only screen and (max-width: 56.25em) { @content };     //900px
+  }
+  @if $breakpoint == tab-land {
+      @media only screen and (max-width: 75em) { @content };    //1200px
+  }
+  @if $breakpoint == big-desktop {
+      @media only screen and (min-width: 112.5em) { @content };    //1800
+  }
+}
